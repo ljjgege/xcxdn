@@ -1,0 +1,624 @@
+<template>
+	<view class="container container19124">
+		<view id="bcfx" class="flex flex-wrap diygw-col-24 flex-direction-column flex20-clz">
+			<view class="flex flex-wrap diygw-col-24 flex-direction-column flex12-clz">
+				<view class="flex flex-wrap diygw-col-24 flex-direction-column flex11-clz">
+					<image src="/static/fxym-qg2.png" class="response diygw-col-24 image4-clz" mode="widthFix"></image>
+					<image src="https://6a75-jun-5gyuy1mfd8ee62b8-1318801545.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E7%89%87/xyyzt8.png?sign=6d34e90e10664df7338983c4d2c37ea7&t=1687460592" class="response diygw-col-24 image3-clz" mode="widthFix"></image>
+				</view>
+				<view class="flex flex-wrap diygw-col-24 flex9-clz">
+					<view class="flex flex-wrap diygw-col-16 flex-direction-column justify-start flex6-clz">
+						<view class="flex flex-wrap diygw-col-0 justify-start items-center flex7-clz">
+							<view class="diygw-col-0 text3-clz"> 多人团价¥ </view>
+							<view class="diygw-col-0 text4-clz"> 99 </view>
+						</view>
+						<view class="flex flex-wrap diygw-col-0 justify-start flex8-clz">
+							<view class="diygw-col-0 text5-clz"> 品牌补贴价¥99 </view>
+							<view class="diygw-col-0 text6-clz"> 官方返现99元 </view>
+						</view>
+					</view>
+					<view class="flex flex-wrap diygw-col-8 flex-direction-column justify-center items-center flex10-clz">
+						<view class="diygw-col-0 text8-clz"> 品牌补贴 </view>
+						<view class="diygw-col-0 text7-clz"> 满3人全返 </view>
+					</view>
+				</view>
+				<view class="flex flex-wrap diygw-col-24 flex-direction-column flex5-clz">
+					<view class="flex flex-wrap diygw-col-24 justify-center items-center flex4-clz">
+						<view class="flex flex-wrap diygw-col-0 flex3-clz">
+							<view class="diygw-col-0 bg-none text-clz"> 返现补贴 </view>
+						</view>
+						<view class="diygw-col-20 text1-clz"> 标题标题标题标题标题标题标题标题 </view>
+					</view>
+					<view class="flex flex-wrap diygw-col-24 justify-center items-center flex2-clz">
+						<view class="flex flex-wrap diygw-col-0 flex-direction-column justify-center items-center flex18-clz">
+							<image v-if="order.total > 0" src="https://6a75-jun-5gyuy1mfd8ee62b8-1318801545.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E7%89%87/wxtp_20230310145246.jpg?sign=7dcb9cf7774f95ce30933be799aaa4bd&t=1687460171" class="image-size diygw-image diygw-col-0 image-clz" mode="widthFix"></image>
+							<image v-if="order.total < 1" src="/static/xyb.png" class="image9-size diygw-image diygw-col-0 image9-clz" mode="widthFix"></image>
+							<view class="diygw-col-0 text13-clz"> 可领38元 </view>
+						</view>
+						<view class="flex flex-wrap diygw-col-0 flex-direction-column justify-center items-center flex1-clz">
+							<image v-if="order.total > 1" src="https://6a75-jun-5gyuy1mfd8ee62b8-1318801545.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E7%89%87/wxtp_20230310145246.jpg?sign=7dcb9cf7774f95ce30933be799aaa4bd&t=1687460171" class="image2-size diygw-image diygw-col-0 image2-clz" mode="widthFix"></image>
+							<image v-if="order.total < 2" src="/static/xyb.png" class="image8-size diygw-image diygw-col-0 image8-clz" mode="widthFix"></image>
+							<view class="diygw-col-0 text15-clz"> 可领29元 </view>
+						</view>
+						<view class="flex flex-wrap diygw-col-0 flex-direction-column justify-center items-center flex14-clz">
+							<image v-if="order.total > 2" src="https://6a75-jun-5gyuy1mfd8ee62b8-1318801545.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E7%89%87/xyyzt8.png?sign=8ad99c2126095351351ad6fe73a6ed5b&t=1687460317" class="image5-size diygw-image diygw-col-0 image5-clz" mode="widthFix"></image>
+							<image v-if="order.total < 3" src="/static/xyb.png" class="image7-size diygw-image diygw-col-0 image7-clz" mode="widthFix"></image>
+							<view class="diygw-col-0 text14-clz"> 可领32元 </view>
+						</view>
+					</view>
+					<view class="flex flex-wrap diygw-col-24 justify-center items-center flex13-clz">
+						<view @tap="navigateTo" data-type="xxcmFunction" class="diygw-col-0 text2-clz"> 可返x元 </view>
+						<view class="flex flex-wrap diygw-col-8 justify-center items-center flex15-clz">
+							<view class="diygw-col-0 text9-clz"> 剩余 </view>
+							<view class="flex flex-direction-column diygw-col-0 countdown-clz">
+								<u-count-down ref="refCountdown" :timestamp="30 * 60 * 60 * 1000" format="HH:mm:ss"> </u-count-down>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="flex flex-wrap diygw-col-24 justify-center items-center flex16-clz" @tap="navigateTo" data-type="bctpFunction">
+				<view class="flex flex-wrap diygw-col-0 flex-direction-column flex-clz">
+					<image :src="cloudImg" class="image1-size diygw-image diygw-col-0" mode="widthFix"></image>
+				</view>
+				<view class="flex flex-wrap diygw-col-9 flex-direction-column flex17-clz">
+					<view class="diygw-col-24 text10-clz"> 长按图片识别二维码 </view>
+					<view class="diygw-col-24 text11-clz"> 立即参与活动 </view>
+				</view>
+				<view class="flex flex-wrap diygw-col-0 flex-direction-column justify-center items-center flex19-clz">
+					<image src="/static/zabc.png" class="image6-size diygw-image diygw-col-0" mode="widthFix"></image>
+					<view class="diygw-col-0 text12-clz"> 点击保存分享 </view>
+				</view>
+			</view>
+		</view>
+		<view class="clearfix"></view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				//用户全局信息
+				userInfo: {},
+				//页面传参
+				globalOption: {},
+				//自定义全局变量
+				globalData: {},
+				user: {
+					rows: [
+						{
+							id: 0,
+							openid: '',
+							scere: null,
+							cere: null,
+							realname: null,
+							nickname: '',
+							avatar: '',
+							gender: '',
+							province: '',
+							city: '',
+							type: '',
+							createTime: '',
+							updateTime: '',
+							deleteTime: null
+						}
+					],
+					total: 0,
+					code: 0,
+					msg: ''
+				},
+				order: {
+					rows: [
+						{
+							total: '',
+							body: '',
+							status: 0,
+							platform: '',
+							scere: null,
+							openid: '',
+							orderId: 0,
+							orderNo: '',
+							payStatus: 0,
+							transactionId: '',
+							userId: 0,
+							createTime: '',
+							updateTime: '',
+							deleteTime: null
+						}
+					],
+					total: 0,
+					code: 0,
+					msg: ''
+				}
+			};
+		},
+		onShareAppMessage() {
+			return {
+				title: '【伊露美】新配方洗衣液',
+				desc: '',
+				path: 'pages/index/index?scene=123abc',
+				imageUrl: 'https://libs.diygw.com/upload/2023/06/10/9677ffb5-049c-4f49-837c-3c0e4385c0b0/xyyzt8.png'
+			};
+		},
+		onShow() {
+			this.setCurrentPage(this);
+		},
+		onLoad(option) {
+			this.setCurrentPage(this);
+			if (option) {
+				this.setData({
+					globalOption: this.getOption(option)
+				});
+			}
+
+			this.init();
+		},
+		methods: {
+			async init() {
+				await this.userApi();
+				await this.orderApi();
+			},
+			// 用户 API请求方法
+			async userApi(param) {
+				let thiz = this;
+				param = param || {};
+				//请求地址及请求数据，可以在加载前执行上面增加自己的代码逻辑
+				let http_url = '/diy/api.user/list';
+				let http_data = {
+					openid: param.openid || this.userInfo.openid
+				};
+				let http_header = {};
+
+				let user = await this.$http.post(http_url, http_data, http_header, 'json');
+
+				this.user = user;
+			},
+			// 分享成功 API请求方法
+			async orderApi(param) {
+				let thiz = this;
+				param = param || {};
+				//请求地址及请求数据，可以在加载前执行上面增加自己的代码逻辑
+				let http_url = '/diy/api.order/list';
+				let http_data = {
+					scere: param.scere || this.user.rows[0].scere,
+					status: param.status || '1'
+				};
+				let http_header = {};
+
+				let order = await this.$http.post(http_url, http_data, http_header, 'json');
+
+				this.order = order;
+			},
+
+			// 小程序码 自定义方法
+			async xxcmFunction(param) {
+				let thiz = this;
+				const that = this;
+				const app = getApp();
+				wx.cloud.init();
+				wx.cloud.callFunction({
+					name: 'getUnlimited',
+					data: {
+						scene: app.globalData.scene
+					},
+					success(res) {
+						console.log(res);
+						let fileManager = wx.getFileSystemManager();
+						let filePath = wx.env.USER_DATA_PATH + '/qr.jpg';
+						console.log(filePath);
+						fileManager.writeFile({
+							filePath: filePath,
+							encoding: 'binary',
+							data: res.result.buffer,
+							success: (res) => {
+								console.log(res);
+								console.log(filePath);
+								var codeImg = filePath;
+								that.setData({
+									filePath: filePath
+								});
+								let param = filePath;
+								that.uploadImagesFunction(param);
+								wx.hideLoading({});
+							}
+						});
+					}
+				});
+			},
+
+			// 上传云存储 自定义方法
+			async uploadImagesFunction(param) {
+				let thiz = this;
+				let filePath = param;
+				var that = this;
+				wx.cloud.uploadFile({
+					cloudPath: `codeImg/${Math.random()}_${Date.now()}.${filePath.match(/\.(\w+)$/)[1]}`,
+					filePath: filePath,
+					success(res) {
+						console.log(res.fileID);
+						that.setData({
+							cloudImg: res.fileID
+						});
+						console.log(cloudImg);
+					}
+				});
+			},
+
+			// 保存图片 自定义方法
+			async bctpFunction(param) {
+				let thiz = this;
+				// 在需要使用的页面的js文件中引入以下代码
+
+				// 获取页面节点信息并绘制到 Canvas
+					wx.createSelectorQuery()
+						.select('#page')
+						.boundingClientRect(function (rect) {
+							const canvasWidth = rect.width;
+							const canvasHeight = rect.height;
+
+							const canvas = wx.createCanvasContext('myCanvas');
+							canvas.width = canvasWidth;
+							canvas.height = canvasHeight;
+
+							// 绘制页面内容
+							// ...
+
+							// 绘制完成后保存图片到相册
+							canvas.draw(false, function () {
+								wx.canvasToTempFilePath({
+									x: 0,
+									y: 0,
+									width: canvasWidth,
+									height: canvasHeight,
+									destWidth: canvasWidth * 2,
+									destHeight: canvasHeight * 2,
+									canvasId: 'myCanvas',
+									success(res) {
+										const tempFilePath = res.tempFilePath;
+										saveImageToAlbum(tempFilePath);
+									},
+									fail() {
+										wx.showToast({
+											title: '生成图片失败',
+											icon: 'none'
+										});
+									}
+								});
+							});
+						})
+						.exec();
+				
+
+				// 保存图片到相册
+				function saveImageToAlbum(filePath) {
+					wx.saveImageToPhotosAlbum({
+						filePath: filePath,
+						success() {
+							wx.showToast({
+								title: '保存成功',
+								icon: 'success'
+							});
+						},
+						fail() {
+							wx.showToast({
+								title: '保存失败',
+								icon: 'none'
+							});
+						}
+					});
+				}
+
+				// 页面中的按钮点击事件
+				function onSaveImage() {
+					drawPageToCanvas();
+				}
+			}
+		}
+	};
+</script>
+
+<style lang="scss" scoped>
+	.flex12-clz {
+		background-color: #ffffff;
+		margin-left: 20px;
+		width: calc(100% - 20px - 20px) !important;
+		margin-top: 0px;
+		margin-bottom: 10px;
+		margin-right: 20px;
+	}
+	.flex11-clz {
+		background-color: #fdf7e7;
+	}
+	.image4-clz {
+		margin-left: 0px;
+		z-index: 1;
+		width: 100% !important;
+		margin-top: 0px;
+		margin-bottom: -13%;
+		margin-right: 0px;
+	}
+	.image3-clz {
+		background-color: #ffffff;
+	}
+	.flex6-clz {
+		background-color: #f74056;
+	}
+	.flex7-clz {
+		margin-left: 5px;
+		margin-top: 2px;
+		margin-bottom: 0px;
+		margin-right: 5px;
+	}
+	.text3-clz {
+		color: #ffffff;
+		font-size: 23px !important;
+	}
+	.text4-clz {
+		margin-left: 0px;
+		padding-top: 5px;
+		color: #ffffff;
+		font-weight: bold;
+		padding-left: 5px;
+		font-size: 38px !important;
+		padding-bottom: 0px;
+		margin-top: -3%;
+		margin-bottom: 0px;
+		margin-right: 0px;
+		padding-right: 5px;
+	}
+	.flex8-clz {
+		margin-left: 5px;
+		margin-top: 0px;
+		margin-bottom: 2px;
+		margin-right: 5px;
+	}
+	.text5-clz {
+		color: #ffd9df;
+		font-size: 15px !important;
+	}
+	.text6-clz {
+		padding-top: 0px;
+		border-bottom-left-radius: 50px;
+		color: #ffffff;
+		padding-left: 5px;
+		font-size: 15px !important;
+		padding-bottom: 0px;
+		border-top-right-radius: 50px;
+		margin-right: 5px;
+		background-color: #fbd7b7;
+		margin-left: 8px;
+		overflow: hidden;
+		border-top-left-radius: 50px;
+		margin-top: 0px;
+		border-bottom-right-radius: 50px;
+		margin-bottom: 0px;
+		padding-right: 5px;
+	}
+	.flex10-clz {
+		background-color: #ed353d;
+	}
+	.text8-clz {
+		color: #ffdedc;
+		font-size: 22px !important;
+		text-align: center;
+	}
+	.text7-clz {
+		color: #ffdedc;
+		font-size: 22px !important;
+		text-align: center;
+	}
+	.flex5-clz {
+		margin-left: 5px;
+		width: calc(100% - 5px - 5px) !important;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.flex4-clz {
+		margin-left: 5px;
+		width: calc(100% - 5px - 5px) !important;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.text-clz {
+		padding-top: 0px;
+		border-bottom-left-radius: 3px;
+		font-weight: bold;
+		padding-left: 2px;
+		font-size: 13px !important;
+		padding-bottom: 0px;
+		border-top-right-radius: 3px;
+		font-style: italic;
+		overflow: hidden;
+		border-top-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+		background-image: linear-gradient(95deg, #f24827 1%, #f77456 97%);
+		padding-right: 2px;
+	}
+	.text1-clz {
+		padding-top: 0px;
+		padding-left: 10px;
+		font-size: 17px !important;
+		padding-bottom: 0px;
+		padding-right: 0px;
+	}
+	.flex2-clz {
+		margin-left: 5px;
+		width: calc(100% - 5px - 5px) !important;
+		margin-top: 15px;
+		margin-bottom: 13px;
+		margin-right: 5px;
+	}
+	.flex18-clz {
+		margin-left: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: 5%;
+	}
+	.image-clz {
+		border-bottom-left-radius: 60px;
+		overflow: hidden;
+		border-top-left-radius: 60px;
+		border-top-right-radius: 60px;
+		border-bottom-right-radius: 60px;
+	}
+	.image-size {
+		height: 40px !important;
+		width: 40px !important;
+	}
+	.image9-clz {
+		border-bottom-left-radius: 60px;
+		overflow: hidden;
+		border-top-left-radius: 60px;
+		border-top-right-radius: 60px;
+		border-bottom-right-radius: 60px;
+	}
+	.image9-size {
+		height: 40px !important;
+		width: 40px !important;
+	}
+	.text13-clz {
+		background-color: #f74056;
+		border-bottom-left-radius: 6px;
+		overflow: hidden;
+		color: #ffffff;
+		font-size: 13px !important;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		border-bottom-right-radius: 6px;
+	}
+	.flex1-clz {
+		margin-left: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: 5%;
+	}
+	.image2-clz {
+		border-bottom-left-radius: 60px;
+		overflow: hidden;
+		border-top-left-radius: 60px;
+		border-top-right-radius: 60px;
+		border-bottom-right-radius: 60px;
+	}
+	.image2-size {
+		height: 40px !important;
+		width: 40px !important;
+	}
+	.image8-clz {
+		border-bottom-left-radius: 60px;
+		overflow: hidden;
+		border-top-left-radius: 60px;
+		border-top-right-radius: 60px;
+		border-bottom-right-radius: 60px;
+	}
+	.image8-size {
+		height: 40px !important;
+		width: 40px !important;
+	}
+	.text15-clz {
+		background-color: #f74056;
+		border-bottom-left-radius: 6px;
+		overflow: hidden;
+		color: #ffffff;
+		font-size: 13px !important;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		border-bottom-right-radius: 6px;
+	}
+	.image5-clz {
+		border-bottom-left-radius: 60px;
+		overflow: hidden;
+		border-top-left-radius: 60px;
+		border-top-right-radius: 60px;
+		border-bottom-right-radius: 60px;
+	}
+	.image5-size {
+		height: 40px !important;
+		width: 40px !important;
+	}
+	.image7-clz {
+		border-bottom-left-radius: 60px;
+		overflow: hidden;
+		border-top-left-radius: 60px;
+		border-top-right-radius: 60px;
+		border-bottom-right-radius: 60px;
+	}
+	.image7-size {
+		height: 40px !important;
+		width: 40px !important;
+	}
+	.text14-clz {
+		background-color: #f74056;
+		border-bottom-left-radius: 6px;
+		overflow: hidden;
+		color: #ffffff;
+		font-size: 13px !important;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		border-bottom-right-radius: 6px;
+	}
+	.text2-clz {
+		font-weight: bold;
+		font-size: 18px !important;
+		text-align: center;
+	}
+	.text9-clz {
+		margin-left: 0px;
+		font-size: 15px !important;
+		margin-top: -2px;
+		margin-bottom: 0px;
+		margin-right: 1%;
+	}
+	.countdown-clz {
+		font-size: 17px !important;
+		text-align: center;
+	}
+	.flex16-clz {
+		margin-left: 5px;
+		width: calc(100% - 5px - 5px) !important;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.flex-clz {
+		margin-left: 5px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.image1-size {
+		height: 80px !important;
+		width: 80px !important;
+	}
+	.text10-clz {
+		margin-left: 5px;
+		width: calc(100% - 5px - 5px) !important;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.text11-clz {
+		margin-left: 5px;
+		width: calc(100% - 5px - 5px) !important;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.image6-size {
+		height: 38px !important;
+		width: 38px !important;
+	}
+	.text12-clz {
+		color: #bfbfbf;
+		font-size: 14px !important;
+	}
+	.container19124 {
+		padding-left: 0px;
+		padding-right: 0px;
+		background-color: #fdf7e7;
+	}
+	.container19124 {
+	}
+</style>
